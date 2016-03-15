@@ -28,6 +28,8 @@ import org.apache.spark.streaming.dstream.ReceiverInputDStream
 
 class AkkaUtilsSuite extends SparkFunSuite {
 
+  println(Thread.currentThread().getContextClassLoader)
+
   test("createStream") {
     val ssc: StreamingContext = new StreamingContext("local[2]", "test", Seconds(1000))
     try {
